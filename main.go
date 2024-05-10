@@ -2,6 +2,7 @@ package main
 
 import (
 	"github.com/JackalLabs/jlaunch/cmd"
+	"github.com/joho/godotenv"
 	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"
 	"github.com/spf13/cobra/doc"
@@ -9,6 +10,12 @@ import (
 )
 
 func main() {
+
+	err := godotenv.Load()
+	if err != nil {
+		_ = err
+	}
+
 	root := cmd.RootCmd()
 
 	isProdEnv := os.Getenv("PROD")

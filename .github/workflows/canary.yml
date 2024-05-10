@@ -2,7 +2,7 @@ name: Canary
 
 on:
   push:
-    branches: [ "main"]
+    branches: ["main"]
 
 
 jobs:
@@ -28,7 +28,7 @@ jobs:
   
   Release:
     needs:
-      [build-cli, build-windows]
+      [build-cli]
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v4.1.1

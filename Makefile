@@ -7,6 +7,7 @@ ldflags = -X github.com/JackalLabs/jlaunch/cmd.Version=$(VERSION) \
 
 BUILD_FLAGS := -ldflags '$(ldflags)' -trimpath
 
+all: install
 
 install: tidy
 	@go install $(BUILD_FLAGS) ./
@@ -34,4 +35,4 @@ format: format-tools
 
 
 
-.PHONY: install format lint format-tools tidy clean build
+.PHONY: install format lint format-tools tidy clean build all
